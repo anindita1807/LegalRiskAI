@@ -1,0 +1,10 @@
+﻿python :   File "<string>", line 26
+At line:1 char:32
++ $env:PYTHONIOENCODING='utf-8'; python -c "
++                                ~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  File "<string>", line 26:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    print(f'Total images: {sum(1 for r in doc.part.rels.values() if " image\
+                                                                    ^
+SyntaxError: unterminated string literal (detected at line 26)

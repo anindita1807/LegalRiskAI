@@ -1,0 +1,99 @@
+﻿=== Table 0 (11 rows x 6 cols) ===
+  Row 0: ['Author(s), Year', 'Problem', 'Dataset', 'Technique', 'Key finding', 'Limitation']
+  Row 1: ['[14]', 'Clause extraction for contract review', 'CUAD: 510 contracts, 41 categories, 13,000+ annotations', 'Fine-tuned transformer QA models', 'Larger models and more data help; task remains hard', 'Extraction only; no risk grading']
+  Row 2: ['[5]', 'Domain-specific language model', 'Large English legal corpus (legislation, cases, contrac', 'LEGAL-BERT pre-training', 'Legal pre-training beats generic BERT on legal tasks', 'No explanation component']
+  Row 3: ['[37]', 'When does legal pre-training help', 'CaseHOLD (53,000+ items)', 'Domain pre-training vs. generic BERT', 'Gains appear when tasks are close to the pre-training d', 'Case law, not contracts']
+  Row 4: ['[8]', 'Unified legal benchmark', 'LexGLUE (seven datasets)', 'BERT-family and hierarchical models', 'Legal models help modestly; long documents are hard', 'Truncation of long texts']
+  Row 5: ['[18]', 'Contract natural language inference', 'ContractNLI (607 NDAs)', 'Span-based NLI with BERT', 'Evidence spans make decisions checkable', 'Narrow contract type']
+  Row 6: ['[19]', 'Lease contract review', 'Annotated lease agreements', 'Benchmark with baseline models', 'Shows relevance for rental documents', 'Small scale']
+  Row 7: ['[21]', 'Unfair clauses in terms of service', 'Annotated online terms of service', 'Classical and neural classifiers', 'Automated unfairness detection is feasible', 'Consumer terms only; sentence level']
+  Row 8: ['[33]', 'Explainable unfairness detection', 'Annotated consumer contracts', 'Memory-augmented networks', 'Explanations from supporting memory', 'Domain restricted to consumer terms']
+  Row 9: ['[25]', 'Long legal documents', 'Long-document legal classification tasks', 'Modified LegalBERT and Longformer', 'Long-context variants handle length better', 'High compute cost']
+  Row 10: ['[13]', 'Legal reasoning in LLMs', 'LegalBench (162 tasks)', 'Prompted LLM evaluation', 'Wide variation in reasoning ability', 'Evaluates, does not deploy a screener']
+
+=== Table 1 (10 rows x 2 cols) ===
+  Row 0: ['Property', 'Value']
+  Row 1: ['Source', 'CUAD master_clauses.csv']
+  Row 2: ['Language', 'English']
+  Row 3: ['Contracts (rows)', '510']
+  Row 4: ['Columns', '83']
+  Row 5: ['Clause categories (excluding metadata)', '36']
+  Row 6: ['Annotation answers: Yes / No / value / empty', '3,688 / 13,142 / 698 / 832']
+  Row 7: ['Non-empty clause spans', '8,683 (7,667 unique)']
+  Row 8: ['Span length (characters)', 'mean 384.1, min 12, max 4,218']
+  Row 9: ['Words per clause', 'mean 60.9, median 48, max 706']
+
+=== Table 2 (4 rows x 3 cols) ===
+  Row 0: ['Label', 'Clauses', 'Share']
+  Row 1: ['Low', '5,684', '65.5%']
+  Row 2: ['Medium', '2,350', '27.1%']
+  Row 3: ['High', '649', '7.5%']
+
+=== Table 3 (4 rows x 6 cols) ===
+  Row 0: ['Split', 'Contracts assigned', 'Clauses', 'Low', 'Medium', 'High']
+  Row 1: ['Train', '363', '5,346', '3,690', '1,322', '334']
+  Row 2: ['Validation', '76', '1,170', '802', '299', '69']
+  Row 3: ['Test', '71', '1,158', '797', '289', '72']
+
+=== Table 4 (10 rows x 2 cols) ===
+  Row 0: ['Item', 'Details']
+  Row 1: ['Language / platform', 'Python (3.12 recommended; code also runs on 3.13/3.14),']
+  Row 2: ['Operating system', 'Windows']
+  Row 3: ['Hardware', 'CPU only, no GPU; about 6.4 s per BERT training step at']
+  Row 4: ['Deep learning', 'PyTorch [29], Hugging Face Transformers [36], pre-train']
+  Row 5: ['Classical ML', 'scikit-learn [30], joblib, NumPy, pandas, SciPy']
+  Row 6: ['NLP libraries', 'spaCy en_core_web_sm [15], NLTK [2], gensim [31]']
+  Row 7: ['Explainability', 'SHAP [23]']
+  Row 8: ['Application', 'Streamlit, PyMuPDF, Plotly, ReportLab, Matplotlib [16]']
+  Row 9: ['Random seed', '42 for splitting, training and Word2Vec']
+
+=== Table 5 (4 rows x 7 cols) ===
+  Row 0: ['Model', 'Representation', 'Accuracy', 'Precision', 'Recall', 'Macro F1', 'Weighted F1']
+  Row 1: ['TF-IDF + Logistic Regression', 'TF-IDF', '0.7927', '0.6573', '0.6191', '0.6351', '0.7875']
+  Row 2: ['Word2Vec + Logistic Regression', 'Word2Vec', '0.5449', '0.4461', '0.4834', '0.4262', '0.5954']
+  Row 3: ['Contracts-BERT', 'Contextual embeddings', '0.7418', '0.5720', '0.6091', '0.5860', '0.7531']
+
+=== Table 6 (10 rows x 6 cols) ===
+  Row 0: ['Model', 'Class', 'P', 'R', 'F1', 'Support']
+  Row 1: ['TF-IDF + LR', 'Low', '0.87', '0.90', '0.89', '797']
+  Row 2: ['TF-IDF + LR', 'Medium', '0.62', '0.59', '0.61', '289']
+  Row 3: ['TF-IDF + LR', 'High', '0.48', '0.36', '0.41', '72']
+  Row 4: ['Word2Vec + LR', 'Low', '0.86', '0.60', '0.71', '797']
+  Row 5: ['Word2Vec + LR', 'Medium', '0.36', '0.42', '0.39', '289']
+  Row 6: ['Word2Vec + LR', 'High', '0.12', '0.43', '0.18', '72']
+  Row 7: ['Contracts-BERT', 'Low', '0.90', '0.83', '0.86', '797']
+  Row 8: ['Contracts-BERT', 'Medium', '0.52', '0.58', '0.55', '289']
+  Row 9: ['Contracts-BERT', 'High', '0.29', '0.42', '0.34', '72']
+
+=== Table 7 (10 rows x 4 cols) ===
+  Row 0: ['Model / Actual', 'Pred. Low', 'Pred. Medium', 'Pred. High']
+  Row 1: ['TF-IDF: Low', '721', '64', '12']
+  Row 2: ['TF-IDF: Medium', '102', '171', '16']
+  Row 3: ['TF-IDF: High', '5', '41', '26']
+  Row 4: ['Word2Vec: Low', '479', '187', '131']
+  Row 5: ['Word2Vec: Medium', '64', '121', '104']
+  Row 6: ['Word2Vec: High', '13', '28', '31']
+  Row 7: ['Contracts-BERT: Low', '661', '119', '17']
+  Row 8: ['Contracts-BERT: Medium', '66', '168', '55']
+  Row 9: ['Contracts-BERT: High', '6', '36', '30']
+
+=== Table 8 (9 rows x 4 cols) ===
+  Row 0: ['Aspect', 'TF-IDF + LR', 'Word2Vec + LR', 'Contracts-BERT (proposed)']
+  Row 1: ['Test macro F1', '0.635', '0.426', '0.586']
+  Row 2: ['Test accuracy', '0.793', '0.545', '0.742']
+  Row 3: ['High-class F1', '0.41', '0.18', '0.34']
+  Row 4: ['Training time', '3.3 seconds', 'Not recorded', '9,185 seconds (about 153 minutes)']
+  Row 5: ['Handles word order and negation', 'Partly (bigrams)', 'No', 'Yes (contextual)']
+  Row 6: ['SHAP explanation', 'Automatic (linear)', 'Not used', 'On demand, slower']
+  Row 7: ['Main strength', 'Fast, strongest score, interpretable', 'Simple dense features', 'Context-aware; room to improve with more training']
+  Row 8: ['Main weakness', 'Fixed vocabulary, no deep context', 'Loses negation and scope', 'Under-trained on CPU, lower macro F1']
+
+=== Table 9 (7 rows x 5 cols) ===
+  Row 0: ['System', 'Risk Levels', 'Explainability', 'Contract Types', 'Deployment']
+  Row 1: ['CLAUDETTE [21]', 'Binary (fair/unfair)', 'None', 'Consumer ToS only', 'Research prototype']
+  Row 2: ['ContractNLI [18]', 'Binary (entails/contradicts/neutral)', 'Evidence spans', 'NDAs only (607 contracts)', 'Research prototype']
+  Row 3: ['Ruggeri et al. [33]', 'Binary (unfair/fair)', 'Memory-based explanations', 'Consumer contracts', 'Research prototype']
+  Row 4: ['LawGeex (commercial)', 'Binary (compliant/non-compliant)', 'Playbook rules only', 'Commercial contracts', 'Cloud SaaS']
+  Row 5: ['CUAD baseline [14]', 'Extraction only (no risk)', 'None', 'Commercial contracts (510)', 'Research prototype']
+  Row 6: ['LegalRisk AI (proposed)', 'Three-tier (Low/Medium/High) with 0ΓÇô100 score', 'SHAP + rule-based plain-English + document observations', 'General contracts (trained on CUAD, tested on rental)', 'Local Streamlit app']
+
